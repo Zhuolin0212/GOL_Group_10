@@ -3,7 +3,24 @@
 use Data::Dumper;
 use warnings;
 
-# helper function
+my @inp_arr;
+my $i = 0;
+
+my $gen =  $ARGV[0];
+chomp($gen);
+
+# take input
+open (FH,'<', "input.txt") or die "Cannot open file";
+while (my $line = <FH>){
+chomp($line);
+$inp_arr[$i] = [split(",", $line)];
+$i++;
+}
+close(FH);
+
+@print_arr = map { [@$_] } @inp_arr;
+
+# helper fucntion
 sub getValue {
     my($x, $y ) = @_;
     my $s = 1;
@@ -16,22 +33,7 @@ sub getValue {
         }
 }
 
-#main function
-sub main {
-my @inp_arr;
-my $i = 0;
-
-my $gen =  $ARGV[0];
-chomp($gen);
-open (FH,'<', "input.txt") or die "Cannot open file";
-while (my $line = <FH>){
-chomp($line);
-$inp_arr[$i] = [split(",", $line)];
-$i++;
-}
-close(FH);
-
-@print_arr = map { [@$_] } @inp_arr;
+# main function
 for (my $i = 0; $i < $gen; $i++){
     print "Generation: $i\n";
     my $e = 1;
@@ -72,5 +74,4 @@ for (my $i = 0; $i < $gen; $i++){
     }
 
     @inp_arr = map { [@$_] } @print_arr;
-}
 }
