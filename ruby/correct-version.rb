@@ -1,6 +1,6 @@
 # Hello World Program in Ruby
 require 'set'
-file = File.open('input.txt')
+#file = File.open('input.txt')
 def display(world,i)
     puts "Generation #{i+1}:"
     x_list = []
@@ -54,12 +54,11 @@ def generation(world,n,neighbor)
         world = new_world
     end
 end
-world = location(glider,[3,2])
-#world = Set[[1,1],[2,2],[2,1],[1,2]]
 
 #######################################
 ############main program###############
 #######################################
 glider = Set[[0,1],[1,0],[0,0],[0,2],[2,1]]
+world = location(glider,[3,2])
 generation(world,10,neighbor)
 
