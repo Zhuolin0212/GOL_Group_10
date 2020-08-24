@@ -30,9 +30,15 @@ Output Pattern :
 =end
 def display(world,i)
     puts "Generation #{i+1}:"
+    x_list = []
+    y_list = []
+    world.each do |item|
+       x_list.push(item[0])
+       y_list.push(item[1])
+    end
     ###############print the map###################
-    for y in (0..10) do
-        for x in (0..10) do
+    for y in (y_list.min-3..y_list.max+3) do
+        for x in (x_list.min-3..x_list.max+3) do
             if world.include?([x,y])
                 print "1"
             else
@@ -42,6 +48,7 @@ def display(world,i)
         puts
     end
 end 
+
 
           
 def location(cell,center)
