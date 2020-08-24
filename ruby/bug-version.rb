@@ -83,7 +83,7 @@ end
 glider = Set[[0,1],[1,0],[0,0],[0,2],[2,1]]
 neighbor = [[-1,1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]]
 world = location(glider,[3,2])
-user_world = generation(world,5,neighbor)
+user_world = generation(world,4,neighbor)
 correct_answer = [[3, 3], [4, 2], [4, 3], [3, 2]]
 puts
 puts
