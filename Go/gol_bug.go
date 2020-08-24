@@ -18,9 +18,12 @@ If the generation number is odd : | If the generation number is even :
 0 0 0 0 0                         | 0 0 1 0 0
 0 0 0 0 0                         | 0 0 0 0 0
 								  |
+To print for debugging use :
+
+fmt.Print("String", variable)
+fmt.Println("String", variable) - adds a newline at the end
 
 */
-
 
 package main
 
@@ -59,6 +62,7 @@ func check_alive(left int, right int, up int, down int, left_up int, left_down i
 //This function is where the next pattern is generated. Find a bug in this function to generate the correct next pattern.
 func generate_next_pattern(input_pattern [5][5]int) [5][5]int {
 
+	//initializing new_pattern array  which will be the next generation
 	new_pattern := [5][5]int{
 		{0,0,0,0,0},
 		{0,0,0,0,0},
@@ -66,17 +70,19 @@ func generate_next_pattern(input_pattern [5][5]int) [5][5]int {
 		{0,0,0,0,0},
 		{0,0,0,0,0}}
 	
-		var left int 
-		var right int
-		var up int
-		var down int
-		var left_up int
-		var left_down int
-		var right_up int
-		var right_down int
+	//declaring neighbours
+	var left int 
+	var right int
+	var up int
+	var down int
+	var left_up int
+	var left_down int
+	var right_up int
+	var right_down int
 	
-	for row:=0; row <= len(new_pattern); row++ {
-		for column:=0; column <= len(new_pattern[row]); column++ {
+	//looping through every element in input_pattern
+	for row:=0; row <= len(input_pattern); row++ {
+		for column:=0; column <= len(input_pattern[row]); column++ {
 			
 			if row-1 < 0 {
 				up = 0
@@ -125,7 +131,7 @@ func generate_next_pattern(input_pattern [5][5]int) [5][5]int {
 				right = input_pattern[row][column+1]}
 
 			
-
+			//Updating values in new_pattern
 			if input_pattern[row][column]==0 {
 				new_pattern[row][column] = check_alive(left, right, up, down, left_up, left_down, right_up, right_down)} else {
 					new_pattern[row][column] = check_dead(left, right, up, down, left_up, left_down, right_up, right_down)}
@@ -159,14 +165,15 @@ func main() {
 
 		var correct bool = test(output_pattern, generation+1)
 
-		fmt.Println()
-
 		if(correct == false){
+			fmt.Println("Wrong pattern generated for generation ",generation+1)
 			break
 		} else {
-
+			fmt.Println("Test passed for generation ",generation+1)
 		}
 		
+		fmt.Println()
+
 		input_pattern = output_pattern
 	}
 
@@ -187,31 +194,8 @@ func test(pattern [5][5]int, generation int) bool {
 
 
 		if(pattern == correct_pattern){
-
-			for i:=0; i<5; i++ {
-				for j:=0; j<5; j++ {
-					fmt.Print(pattern[i][j])
-				}
-				fmt.Println();
-			}
-	
 			return(true)
 		} else{
-	
-			fmt.Println("Pattern you generated:")
-			for i:=0; i<5; i++ {
-				for j:=0; j<5; j++ {
-					fmt.Print(pattern[i][j])
-				}
-				fmt.Println();
-			}
-			fmt.Println("Correct Pattern:")
-			for i:=0; i<5; i++ {
-				for j:=0; j<5; j++ {
-					fmt.Print(correct_pattern[i][j])
-				}
-				fmt.Println();
-			}
 			return(false)
 		}
 
@@ -226,31 +210,8 @@ func test(pattern [5][5]int, generation int) bool {
 		}
 
 		if(pattern == correct_pattern){
-
-			for i:=0; i<5; i++ {
-				for j:=0; j<5; j++ {
-					fmt.Print(pattern[i][j])
-				}
-				fmt.Println();
-			}
-	
 			return(true)
 		} else{
-	
-			fmt.Println("Pattern you generated:")
-			for i:=0; i<5; i++ {
-				for j:=0; j<5; j++ {
-					fmt.Print(pattern[i][j])
-				}
-				fmt.Println();
-			}
-			fmt.Println("Correct Pattern:")
-			for i:=0; i<5; i++ {
-				for j:=0; j<5; j++ {
-					fmt.Print(correct_pattern[i][j])
-				}
-				fmt.Println();
-			}
 			return(false)
 		}
 
