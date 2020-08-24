@@ -81,8 +81,8 @@ func generate_next_pattern(input_pattern [5][5]int) [5][5]int {
 	var right_down int
 	
 	//looping through every element in input_pattern
-	for row:=0; row <= len(input_pattern); row++ {
-		for column:=0; column <= len(input_pattern[row]); column++ {
+	for row:=0; row < input_pattern.length; row++ {
+		for column:=0; column < input_pattern[row].length; column++ {
 			
 			if row-1 < 0 {
 				up = 0
@@ -133,8 +133,10 @@ func generate_next_pattern(input_pattern [5][5]int) [5][5]int {
 			
 			//Updating values in new_pattern
 			if input_pattern[row][column]==0 {
-				new_pattern[row][column] = check_alive(left, right, up, down, left_up, left_down, right_up, right_down)} else {
-					new_pattern[row][column] = check_dead(left, right, up, down, left_up, left_down, right_up, right_down)}
+				new_pattern[row][column] = check_alive(left, right, up, down, left_up, left_down, right_up, right_down)
+			} else {
+					new_pattern[row][column] = check_dead(left, right, up, down, left_up, left_down, right_up, right_down)
+			}
 		}
 	}
 
@@ -159,63 +161,104 @@ func main() {
 	//Loop which calls the generate_next_pattern function 
 	for generation:=0; generation < number_of_generations; generation++ {
 
-		var output_pattern [5][5]int= generate_next_pattern(input_pattern)
-		
-		fmt.Println("Generation: ", generation+1)
+	var output_pattern [5][5]int= generate_next_pattern(input_pattern)
+	input_pattern = output_pattern
+	
+	}
 
-		var correct bool = test(output_pattern, generation+1)
+	var correct bool = test()
 
-		if(correct == false){
-			fmt.Println("Wrong pattern generated for generation ",generation+1)
-			break
-		} else {
-			fmt.Println("Test passed for generation ",generation+1)
-		}
-		
-		fmt.Println()
-
-		input_pattern = output_pattern
+	if(correct == false){
+		fmt.Println("Wrong patterns generated")
+	} else {
+		fmt.Println("Tests passed")
 	}
 
 
 }	
 
 //Test function
-func test(pattern [5][5]int, generation int) bool {
-	if(generation%2 == 0){
+func test() bool {
+
+	var cur_pattern_1 = [5][5]int{
+		{0,0,0,0,0},
+		{0,0,1,0,0},
+		{0,0,1,0,0},
+		{0,0,1,0,0},
+		{0,0,0,0,0},
+	}
+
+	for i:= 1; i<=4; i++ {
+		cur_pattern_1 = generate_next_pattern(cur_pattern_1)
+
+		if(i%2 == 0){
 		
-		var correct_pattern = [5][5]int{
-			{0,0,0,0,0},
-			{0,0,1,0,0},
-			{0,0,1,0,0},
-			{0,0,1,0,0},
-			{0,0,0,0,0},
-		}
-
-
-		if(pattern == correct_pattern){
-			return(true)
+			var correct_pattern_1 = [5][5]int{
+				{0,0,0,0,0},
+				{0,0,1,0,0},
+				{0,0,1,0,0},
+				{0,0,1,0,0},
+				{0,0,0,0,0},
+			}
+	
+	
+			if(cur_pattern_1 == correct_pattern_1){
+				continue
+			} else{
+				return(false)
+			}
+	
 		} else{
-			return(false)
-		}
-
-	} else{
-
-		var correct_pattern = [5][5]int{
-			{0,0,0,0,0},
-			{0,0,0,0,0},
-			{0,1,1,1,0},
-			{0,0,0,0,0},
-			{0,0,0,0,0},
-		}
-
-		if(pattern == correct_pattern){
-			return(true)
-		} else{
-			return(false)
+	
+			var correct_pattern_1 = [5][5]int{
+				{0,0,0,0,0},
+				{0,0,0,0,0},
+				{0,1,1,1,0},
+				{0,0,0,0,0},
+				{0,0,0,0,0},
+			}
+	
+			if(cur_pattern_1 == correct_pattern_1){
+				continue
+			} else{
+				return(false)
+			}
+	
 		}
 
 	}
 
+	var cur_pattern_2 = [5][5]int{
+		{0,0,0,0,0},
+		{0,1,1,0,0},
+		{0,1,1,0,0},
+		{0,0,0,0,0},
+		{0,0,0,0,1},
+	}
+
+	for i:= 1; i<=2; i++ {
+		cur_pattern_2 = generate_next_pattern(cur_pattern_2)
+
+		
+		
+			var correct_pattern_1 = [5][5]int{
+				{0,0,0,0,0},
+				{0,0,1,0,0},
+				{0,0,1,0,0},
+				{0,0,1,0,0},
+				{0,0,0,0,0},
+			}
+	
+	
+			if(cur_pattern_1 == correct_pattern_1){
+				continue
+			} else{
+				return(false)
+			}
+	
+
+	}
+
+	return(true)
 	
 }
