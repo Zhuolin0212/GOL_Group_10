@@ -1,6 +1,20 @@
-# Hello World Program in Ruby
+
 require 'set'
-#file = File.open('input.txt')
+#Input Pattern : 
+#0 0 0 0 0 
+#0 0 1 0 0
+#0 0 1 0 0
+#0 0 1 0 0 
+#0 0 0 0 0
+#Output Pattern :
+#If the generation number is odd : | If the generation number is even :
+#								  |
+#0 0 0 0 0                         | 0 0 0 0 0
+#0 0 0 0 0                         | 0 0 1 0 0
+#0 1 1 1 0                         | 0 0 1 0 0
+#0 0 0 0 0                         | 0 0 1 0 0
+#0 0 0 0 0                         | 0 0 0 0 0
+#								  |
 def display(world,i)
     puts "Generation #{i+1}:"
     x_list = []
