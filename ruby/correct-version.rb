@@ -1,6 +1,5 @@
 # Hello World Program in Ruby
 require 'set'
-#file = File.open('input.txt')
 def display(world,i)
     puts "Generation #{i+1}:"
     x_list = []
@@ -13,9 +12,9 @@ def display(world,i)
     for y in (y_list.min-3..y_list.max+3) do
         for x in (x_list.min-3..x_list.max+3) do
             if world.include?([x,y])
-                print "*"
+                print "1"
             else
-                print "."
+                print "0"
             end
         end
         puts
