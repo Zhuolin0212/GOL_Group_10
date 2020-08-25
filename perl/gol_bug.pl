@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-=pod
+=begin
 Here, X --> alive cell
       O --> dead cell
 
@@ -19,7 +19,8 @@ If the generation number is odd : | If the generation number is even :
 0 0 0 0 0                         | 0 0 X 0 0
 0 0 0 0 0                         | 0 0 0 0 0
 								  |
-To print for debugging use :
+Debugging use :
+$#arr......To get the length of array.
 print <variable>;  ......To print scalar quantities like int,string
 print Dumper(\@arr);  .......To print data structure like arrays,hash
 =cut
@@ -75,7 +76,7 @@ for (my $i = 0; $i < $gen; $i++){
     #print "Generation: $i\n";
 	#print map((map($_ ? "X " : "O ", @$_), "\n"), @inp_arr);
     #print "\n\n";
-    my $row = @inp_arr;
+
     for my $j (0 .. $inp_arr) {
         if ($j == 2){
         $check = 99;
