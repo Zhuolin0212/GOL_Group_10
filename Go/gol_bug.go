@@ -31,118 +31,6 @@ import (
 	"fmt"
 )
 
-//Check whether a dead cell will be dead or alive in the next generation
-func check_dead(left int, right int, up int, down int, left_up int, left_down int, right_up int, right_down int) int {
-
-	var count int
-
-	count = left + right + up + down + left_up + left_down + right_up + right_down
-
-	if count==3{
-		return(1)} else{
-			return(0)
-	}
-
-}
-
-//check whether an alive cell will be dead or alive in the next generation
-func check_alive(left int, right int, up int, down int, left_up int, left_down int, right_up int, right_down int) int {
-
-	var count int
-
-	count = left + right + up + down + left_up + left_down + right_up + right_down
-
-	if count==2 || count==3{
-		return(1)} else{
-			return(0)
-	}
-
-}
-
-//This function is where the next pattern is generated. Find a bug in this function to generate the correct next pattern.
-func generate_next_pattern(input_pattern [5][5]int) [5][5]int {
-
-	//initializing new_pattern array  which will be the next generation
-	new_pattern := [5][5]int{
-		{0,0,0,0,0},
-		{0,0,0,0,0},
-		{0,0,0,0,0},
-		{0,0,0,0,0},
-		{0,0,0,0,0}}
-	
-	//declaring neighbours
-	var left int 
-	var right int
-	var up int
-	var down int
-	var left_up int
-	var left_down int
-	var right_up int
-	var right_down int
-	
-	//looping through every element in input_pattern
-	for row:=0; row < input_pattern.length; row++ {
-		for column:=0; column < input_pattern[row].length; column++ {
-			
-			if row-1 < 0 {
-				up = 0
-				left_up = 0
-				right_up = 0
-			} else {
-
-				up = input_pattern[row-1][column]
-
-				if column-1 < 0 {
-					left_up = 0
-				} else {
-					left_up = input_pattern[row-1][column -1]}
-
-				if column+1 > 4 {
-					right_up = 0
-				} else {
-					right_up = input_pattern[row-1][column +1]}}
-			
-			if row+1 > 4 {
-				down = 0
-				right_down = 0
-				left_down = 0
-			} else {
-
-				down = input_pattern[row+1][column]
-
-				if column-1 < 0 {
-					left_down = 0
-				} else {
-					left_down = input_pattern[row+1][column-1]}
-
-				if column+1>4 {
-					right_down = 0
-				} else {
-					right_down = input_pattern[row+1][column+1]}}
-			
-			if column-1 < 0 {
-				left = 0
-			} else {
-				left = input_pattern[row][column-1]}
-
-			if column+1 > 4 {
-				right = 0
-			} else {
-				right = input_pattern[row][column+1]}
-
-			
-			//Updating values in new_pattern
-			if input_pattern[row][column]==0 {
-				new_pattern[row][column] = check_alive(left, right, up, down, left_up, left_down, right_up, right_down)
-			} else {
-					new_pattern[row][column] = check_dead(left, right, up, down, left_up, left_down, right_up, right_down)
-			}
-		}
-	}
-
-	return(new_pattern)
-}
-
 //main function
 func main() {
 	
@@ -173,8 +61,48 @@ func main() {
 	} else {
 		fmt.Println("Tests passed")
 	}
+}
 
+//This function is where the next pattern is generated. Find bugs in this function to generate the correct next pattern.
+func generate_next_pattern(input_pattern [5][5]int) [5][5]int {
 
+	//initializing new_pattern array  which will be the next generation
+	new_pattern := [5][5]int{
+		{0,0,0,0,0},
+		{0,0,0,0,0},
+		{0,0,0,0,0},
+		{0,0,0,0,0},
+		{0,0,0,0,0}}
+	
+	//looping through every element in input_pattern
+	for row:=0; row < input_pattern.length; row++ {
+		for column:=0; column < input_pattern[row].length; column++ {
+			
+			var count int = 0
+
+			//looping through neighbours to calculate sum
+			for i:=(row-1); i<=(row+1); i++ {
+				for j:= (column-1); j<=(column + 1); j++ {
+					if (i>=0 && i<=4 && j>=0 && j<=4 && !(i==row && j==column)) {
+						count = count + input_pattern[i][j]	
+					} 
+				}
+			}
+			
+			if (input_pattern[row][column] == 0) {
+				if (count==3 || count == 2) {
+					new_pattern[row][column] = 1} else{
+				}
+			} else {
+				if (count==3) {
+					new_pattern[row][column] = 1} else{
+						new_pattern[row][column] = 0
+				}
+			}
+		}
+	}
+
+	return(new_pattern)
 }	
 
 //Test function
