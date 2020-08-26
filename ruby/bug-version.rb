@@ -73,7 +73,11 @@ def generation(world,n,neighbor)
         counts.each do |key,value|
             ################## judge live or die###########################
             if counts[key] != 3 and (counts[key]!= 2 and not world.include?(key))
-                new_world.push(key)
+                
+                
+                ###################if condition is true, we add new cell
+                new_world (key)
+                ################################
             end
         end
         ##############update map######################
