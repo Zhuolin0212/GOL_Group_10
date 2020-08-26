@@ -75,8 +75,8 @@ def generation(world,n,neighbor)
             if counts[key] != 3 and (counts[key]!= 2 and not world.include?(key))
                 
                 
-                ###################if condition is true, we add new cell
-                new_world (key)
+                ###################if condition is true, we add new key to Set
+                new_world.add_this(key)
                 ################################
             end
         end
