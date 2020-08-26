@@ -62,7 +62,7 @@ def location(cell,center)
 end
 
 def generation(world,n,neighbor)
-    (n-1).times do |i|
+    n.times do |i|
         display(world,i)
         counts = Hash.new(0)
         for c in world
