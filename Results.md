@@ -15,7 +15,7 @@ Number of times the participant ran code for each language.
 Based on the data collected we will compare each language and draw our conclusions!
 
 # Materials
-## Survey:
+## Survey
 We used MonkeySurvey to make a questionnaire and counted the languages known by the participants. And ask participants that if they have used Go, Perl, and Ruby to code. 
 
 ## Code with bugs
