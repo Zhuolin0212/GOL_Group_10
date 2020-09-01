@@ -30,6 +30,42 @@ At the end of the questionnaire, there is a question ask "how similar GO/Perl/Ru
 
 # Observations
 
+### Plot to describe percentage of participants familiar with each language
+
+![Plot of languages known by participants](https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Plots/Languages_Known.JPG)
+
+### Plots of similarity to already known languages
+
+#### Plot of how similar Go looked as compared to languages participants are already familiar with
+
+![Plot of languages known by participants](https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Plots/Similarity_To_Go.JPG)
+
+#### Plot of how similar Ruby looked as compared to languages participants are already familiar with
+
+![Plot of languages known by participants](https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Plots/Similarity_To_Ruby.JPG)
+
+#### Plot of how similar Perl looked as compared to languages participants are already familiar with
+
+![Plot of languages known by participants](https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Plots/Similarity_To_Perl.JPG)
+
+### Plots of debug time in each language
+
+#### Histogram of debug time for participants during the experiment in Go
+
+![Plot of languages known by participants](https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Plots/GO_Debug_Histogram.JPG)
+
+#### Histogram of debug time for participants during the experiment in Ruby
+
+![Plot of languages known by participants](https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Plots/Ruby_Debug_Histogram.JPG)
+
+#### Histogram of debug time for participants during the experiment in Perl
+
+![Plot of languages known by participants](https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Plots/Perl_Debug_Histogram.JPG)
+
+### Difficulty in debugging ranks for languages by participants
+
+![Plot of languages known by participants](https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Plots/Languages_Difficulty_Rank.JPG)
+
 # Conclusions
 
 # Threats to validity  
