@@ -67,6 +67,7 @@ At the end of the questionnaire, there is a question ask "how similar GO/Perl/Ru
 ![Plot of languages known by participants](https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Plots/Languages_Difficulty_Rank.JPG)
 
 # Conclusions
+In this experiment, we invited 9 participants to debug the bug version of Game of Life in 3 different languages(Ruby, Go, Perl). Participants performed a 30-minute test, with about 8 minutes of debug time for each language and a post-questionnaire. The questionnaire showed that Ruby was the most difficult language for participants to debug, followed by Perl, and the Go language that was the easiest to debug. The most familiar languages for the participants themselves are JS, C, Java and Python. And the Go language is the most similar to what they mastered at before, Perl is completely different from what they were good at before and Ruby is somewhat similar. Ruby is similar to what they learned before, but the debug success rate is low. We think it may be that the bug needs to be modified slightly different from the other 2 languages. 
 
 # Threats to validity  
 
