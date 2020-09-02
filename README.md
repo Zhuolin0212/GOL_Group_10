@@ -31,3 +31,8 @@ While the participants are debuging the code in each language we will gather the
 - Number of times the participant ran code for each language.
 
 Based on the data collected we will compare each language and draw our conclusions!
+
+
+
+## Result
+See our result here!'https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Results.md'
