@@ -35,4 +35,4 @@ Based on the data collected we will compare each language and draw our conclusio
 
 
 ## Result
-[See our result here!]('https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Results.md')
+[See our result here!](https://github.com/Zhuolin0212/GOL_Group_10/blob/master/Results.md)
