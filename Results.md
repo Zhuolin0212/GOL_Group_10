@@ -1,5 +1,5 @@
 # Methods
-Each language's buggy code had two bugs. One was a compilation bug to test how easy it is to follow the compiler's error message and the second was a logical bug to check how easy it is to grasp and understand the syntax of the language.
+Each language's buggy code has two bugs. One is a compilation bug to test how easy it is to follow the compiler's error message and the second is a logical bug to check how easy it is to grasp and understand the syntax of the language.
 
 For any type of analysis to happen, we have to first collect data!
 
@@ -33,16 +33,16 @@ Based on the data collected we compared the languages on following criterias:
 
 # Materials  
 ### Survey
-We used MonkeySurvey to make a questionnaire and counted the languages known by the participants. And ask participants that if they have used Go, Perl, and Ruby to code. 
+We used Survey Monkey as a questionnaire to collect data from the participants. 
 
 ### Code with bugs  
-Our task sets two bugs for each language, one is compile bug, and another is logic bug. Each language has bugs designed in the same place. So after debugging one of the languages the participantmight spend less time finding the bug's location while debugging the other two languages. Therefore, the order in which the participants tested the three languages affected how long they ended up spending and how they ranked the language in terms of difficulty. 
+Our task sets two bugs for each language, one is compile bug, and another is logic bug. Each language has bugs designed in the same place. So after debugging one of the languages the participant might spend less time finding the bug's location while debugging the other two languages. Therefore, we changed the order of languages for each participant. 
 
 ### Online ide  
 Partcipants were provided with an online ide link 'https://www.onlinegdb.com/' and required to share their screen during the experienments.
 
 ### Data collected  
-By monitering the parcipants debugging process, we recorded how long it took to debug for each different language and evaluated if they passed the test. We also counted how many times participants excute the code in order to see if the warning messages gave enough cue for participants to find the bug right away.
+By monitoring the parcipants debugging process, we recorded how long it took to debug for each different language and evaluated if they passed the test. We also counted how many times participants excute the code in order to see if the warning messages gave enough cue for participants to find the bug right away.
 At the end of the questionnaire, there is a question ask "how similar GO/Perl/Ruby looked as compared to the languages you have worked with". This is designed to consider whether it affects the debug speed of the participants.
 
 # Observations
@@ -96,7 +96,7 @@ Based on the observations that we collected from 9 participants, we can deduce f
 - Perl comes in at second place as it came second in the ranking for debug time, tied with Ruby in the ranking by participants for easiness in debugging and came in third in the ranking for similarity to previously know languages by participants.
 - Ruby comes in at third place  as it came third in the ranking for debug time, tied with Ruby in the ranking by participants for easiness in debugging and came in second in the ranking for similarity to previously know languages by participants.
 
-(We have given more importance to debug time taken by participant than similarity to languages known previously by participants)
+(We have given more importance to debug time taken by participant than similarity to languages already known by participants)
 
 <!--In this experiment, we invited 9 participants to debug the bug version of Game of Life in 3 different languages(Ruby, Go, Perl). Participants performed a 30-minute test, with about 8 minutes of debug time for each language and a post-questionnaire. The questionnaire showed that Ruby was the most difficult language for participants to debug, followed by Perl, and the Go language that was the easiest to debug. The most familiar languages for the participants themselves are JS, C, Java and Python. And the Go language is the most similar to what they mastered at before, Perl is completely different from what they were good at before and Ruby is somewhat similar. Ruby is similar to what they learned before, but the debug success rate is low. We think it may be that the bug needs to be modified slightly different from the other 2 languages. 
 -->
